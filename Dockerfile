@@ -1,8 +1,8 @@
-FROM node:alpine
+FROM node
 
 WORKDIR /app
 COPY package.json .
-RUN npm install --only=prod
+RUN npm i --no-optional
 COPY . .
 
 CMD ["npm", "start"]
