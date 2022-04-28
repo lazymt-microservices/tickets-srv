@@ -21,5 +21,5 @@ export default () => {
     const base64 = Buffer.from(sessionJSON).toString('base64');
 
     // return a string that's the cookie with the encoded data
-    return [`express:sess=${base64}`];
+    return [`session=${base64}`];
 };
