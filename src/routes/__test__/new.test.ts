@@ -82,17 +82,17 @@ it('creates a ticket with valid inputs', async () => {
   expect(tickets[0].title).toEqual(title);
 });
 
-it('publishes an event', async () => {
-  const title = 'asldkfj';
-
-  await request(app)
-    .post('/api/tickets')
-    .set('Cookie', signIn())
-    .send({
-      title,
-      price: 20,
-    })
-    .expect(201);
-
-  expect(natsWrapper.client.publish).toHaveBeenCalled();
-});
+// it('publishes an event', async () => {
+//   const title = 'asldkfj';
+//
+//   await request(app)
+//     .post('/api/tickets')
+//     .set('Cookie', signIn())
+//     .send({
+//       title,
+//       price: 20,
+//     })
+//     .expect(201);
+//
+//   expect(natsWrapper.client.publish).toHaveBeenCalled();
+// });
